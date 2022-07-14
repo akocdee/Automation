@@ -26,20 +26,30 @@ class TestApp():
             #getResponse()
         except:
             print(obj+" doesn't exist")
+    
+    def _click_css(self,obj):
+        try:
+            element = self.driver.find_element(By.CSS_SELECTOR, obj)
+            element.click()
+            print("Clicked(CSS): "+obj)
+            time.sleep(1) 
+            #getResponse()
+        except:
+            print(obj+" doesn't exist")
 
     
 
-    def run(self,loopvar):
-        
-        self.login()
+    def run(self):
+        self.groupiot()
+        """
         if loopvar == "normalitem":
             self.normalitem()
         elif loopvar == "normalopt":
             self.normalopt()
         else:
             print("end")
-        self.checkout()
-        
+        """
+
             
     #login
     def login(self):
@@ -87,6 +97,31 @@ class TestApp():
         self.driver.find_element(By.CSS_SELECTOR, "#add-popup-"+plu+"-"+menuid+" .input-group-radio:nth-child(3) > .input-group-label").click()
         print('Item Option Selected')
         self._click_object(plu)
+    
+    #size group item optop
+    def groupiot(self):
+        item = self.parameter.get('sizegroup')
+        plu = item.get('plu')
+        menuid = item.get('menuid')
+        rct = item.get('removeitem')
+        adct = item.get('additem')
+        grpid = item.get('groupid')
+        time.sleep(1)
+        self._click_object('promotional_close')
+        self._click_object('loyal_close')
+        #add plu normalitemopt      
+        self.driver.find_element(By.LINK_TEXT, "Traditional Pizzas").click()
+        time.sleep(1)
+        #input = self.driver.find_element_by_name(grpid)
+        self.driver.find_element(By.CSS_SELECTOR, ".item-add-popup > #\\31 88129").click()
+        time.sleep(2)
+        self.driver.find_element(By.CSS_SELECTOR, "#menu-"+grpid+" > .input-group-radio:nth-child(2) > .input-group-label").click()
+        time.sleep(2)
+        self.driver.find_element(By.CSS_SELECTOR, "#"+rct+" span:nth-child(2)").click()
+        self.driver.find_element(By.LINK_TEXT, "Sauces/Mayo").click()
+        time.sleep(2)
+        self.driver.find_element(By.CSS_SELECTOR, ".open .extra-row-o:nth-child(1) .extra-toppings-desc").click()
+        self._click_object(grpid)
 
     #checkout
     def checkout(self):
@@ -121,6 +156,13 @@ test_case = {
     "normalitem" : {
         "plu": "SID25",
         "menuid": "197996"
+    },
+    "sizegroup" : {
+        "plu": "SID25",
+        "menuid": "197996",
+        "groupid": "188129",
+        "removeitem": "T001",
+        "additem": "T124"
     }
 } 
 
@@ -128,6 +170,12 @@ test_case = {
 test = TestApp(test_case)
 
 testcases = ["normalitem", "normalopt"]
-
-for x in testcases:
-    test.run(x)
+test.login()
+test.run()
+test.checkout()   
+#Note: One order each scenario if login and checkout is on
+#for x in testcases:
+    #test.login()
+    #test.run(x)
+    #test.checkout()
+ 

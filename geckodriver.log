@@ -1,0 +1,26 @@
+1657769992244	geckodriver	INFO	Listening on 127.0.0.1:58120
+1657769995326	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58121" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile8xEjOA"
+1657769995619	Marionette	INFO	Marionette enabled
+1657769995623	Marionette	INFO	Listening on port 58140
+WebDriver BiDi listening on ws://localhost:58121
+Read port: 58140
+1657769995769	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile8xEjOA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58121/devtools/browser/16c3ef92-5f74-4a5b-ae4c-db16ec9984ef
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://identity.doordash.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://identity.doordash.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://identity.doordash.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://identity.doordash.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.doordash.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.doordash.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-T44F8F&l=dataLayer, line 42: uncaught exception: [object Object]
+JavaScript error: https://www.doordash.com/store/deliverit-test-business-gillen-23484130/13787575/ line 539 > injectedScript, line 1: ReferenceError: ytag is not defined
+JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-T44F8F&l=dataLayer, line 42: uncaught exception: [object Object]
+JavaScript error: https://www.doordash.com/store/deliverit-test-business-gillen-23484130/13787575/ line 539 > injectedScript, line 1: ReferenceError: ytag is not defined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.doordash.com"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
